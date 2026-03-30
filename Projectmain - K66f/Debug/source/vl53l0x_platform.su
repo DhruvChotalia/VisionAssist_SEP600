@@ -1,0 +1,12 @@
+../source/vl53l0x_platform.c:8:15:VL53L0X_WriteMulti	32	static
+../source/vl53l0x_platform.c:13:15:VL53L0X_ReadMulti	32	static
+../source/vl53l0x_platform.c:19:15:VL53L0X_WrByte	16	static
+../source/vl53l0x_platform.c:23:15:VL53L0X_WrWord	24	static
+../source/vl53l0x_platform.c:30:15:VL53L0X_WrDWord	32	static
+../source/vl53l0x_platform.c:40:15:VL53L0X_RdByte	24	static
+../source/vl53l0x_platform.c:44:15:VL53L0X_RdWord	32	static
+../source/vl53l0x_platform.c:53:15:VL53L0X_RdDWord	32	static
+../source/vl53l0x_platform.c:63:15:VL53L0X_UpdateByte	24	static
+../source/vl53l0x_platform.c:72:15:VL53L0X_PollingDelay	16	static
+../source/vl53l0x_platform.c:77:15:VL53L0X_LockInterrupts	4	static
+../source/vl53l0x_platform.c:81:15:VL53L0X_UnlockInterrupts	4	static

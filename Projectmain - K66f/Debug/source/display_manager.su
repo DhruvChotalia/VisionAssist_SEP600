@@ -1,0 +1,13 @@
+C:\Users\dhruv\OneDrive\Documents\Main two resumes\Projectmain  Button +lcd +filtering\drivers/fsl_clock.h:725:20:CLOCK_EnableClock	24	static
+C:\Users\dhruv\OneDrive\Documents\Main two resumes\Projectmain  Button +lcd +filtering\drivers/fsl_port.h:271:20:PORT_SetPinConfig	32	static
+../source/display_manager.c:19:13:hw_delay_ms	24	static
+../source/display_manager.c:26:13:Init_I2C1_Pins	16	static
+../source/display_manager.c:41:13:Init_I2C1_Peripheral	24	static
+../source/display_manager.c:49:17:I2C_WriteByte	40	static
+../source/display_manager.c:58:13:LCD_WriteNibble	24	static
+../source/display_manager.c:66:13:LCD_SendCommand	16	static
+../source/display_manager.c:71:13:LCD_SendData	16	static
+../source/display_manager.c:76:13:LCD_SetCursor	24	static
+../source/display_manager.c:81:13:LCD_PrintString	16	static
+../source/display_manager.c:87:6:Display_Init	8	static
+../source/display_manager.c:109:6:Display_UpdateScreen	56	static

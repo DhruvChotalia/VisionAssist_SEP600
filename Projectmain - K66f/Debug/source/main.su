@@ -1,0 +1,5 @@
+C:\Users\dhruv\OneDrive\Documents\Main two resumes\Projectmain  Button +lcd +filtering\drivers/fsl_clock.h:725:20:CLOCK_EnableClock	24	static
+C:\Users\dhruv\OneDrive\Documents\Main two resumes\Projectmain  Button +lcd +filtering\drivers/fsl_port.h:271:20:PORT_SetPinConfig	32	static
+C:\Users\dhruv\OneDrive\Documents\Main two resumes\Projectmain  Button +lcd +filtering\drivers/fsl_port.h:374:20:PORT_SetPinMux	24	static
+../source/main.c:20:6:InitHardware	32	static
+../source/main.c:58:5:main	8	static

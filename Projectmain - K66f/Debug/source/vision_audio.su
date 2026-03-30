@@ -1,0 +1,5 @@
+C:\Users\dhruv\Documents\MCUXpressoIDE_25.6.136\workspace\Projectmain\drivers/fsl_dac.h:187:20:DAC_Enable	16	static
+C:\Users\dhruv\Documents\MCUXpressoIDE_25.6.136\workspace\Projectmain\drivers/fsl_dac.h:212:20:DAC_EnableBuffer	16	static
+../source/vision_audio.c:17:13:delay_us	24	static
+../source/vision_audio.c:23:13:Audio_Playback_Task	104	static
+../source/vision_audio.c:106:6:Vision_Audio_Init	16	static
