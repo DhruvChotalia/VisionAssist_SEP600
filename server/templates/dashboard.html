@@ -245,7 +245,8 @@ body::before {
   font-family: var(--mono);
   font-size: 1.1rem;
   color: #00ff41;
-  min-height: 52px;
+  min-height: 64px;
+  line-height: 1.4;
   text-shadow: 0 0 6px rgba(0,255,65,0.6);
   word-break: break-all;
   letter-spacing: 1px;
@@ -468,7 +469,6 @@ input[type=range]::-webkit-slider-thumb {
 </head>
 <body>
 
-<!-- ── Header ──────────────────────────────────────────────────────────────── -->
 <div class="header">
   <div class="header-brand">
     <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -492,7 +492,6 @@ input[type=range]::-webkit-slider-thumb {
   </div>
 </div>
 
-<!-- ── Mode tabs ───────────────────────────────────────────────────────────── -->
 <div class="twin-tabs">
   <button class="tab active" onclick="switchTab('main')"    id="tab-main">Detection</button>
   <button class="tab"        onclick="switchTab('observe')" id="tab-observe">Twin — Observe</button>
@@ -501,12 +500,8 @@ input[type=range]::-webkit-slider-thumb {
 
 <div class="main">
 
-<!-- ══════════════════════════════════════════════════════════════════════════
-     PANEL: MAIN (original detection dashboard)
-══════════════════════════════════════════════════════════════════════════ -->
 <div id="panel-main" class="panel active">
 
-  <!-- Left: vision feed -->
   <div class="card" style="grid-row:span 3;">
     <div class="card-title"><span class="accent">●</span> Live Vision Feed</div>
 
@@ -535,7 +530,6 @@ input[type=range]::-webkit-slider-thumb {
     </div>
   </div>
 
-  <!-- Right col top: distance + chart -->
   <div class="card">
     <div class="card-title"><span class="accent">◈</span> Telemetry</div>
     <div class="obs-big" id="mainDist">--- <span class="obs-unit">mm</span></div>
@@ -547,7 +541,6 @@ input[type=range]::-webkit-slider-thumb {
     <div class="chart-wrap" style="margin-top:8px;"><canvas id="distChart"></canvas></div>
   </div>
 
-  <!-- Right col middle: control panel (ESP32 IP + quick mode) -->
   <div class="card">
     <div class="card-title"><span class="accent">⌗</span> Quick Commands</div>
     <div class="ctrl-label">ESP32 IP Address</div>
@@ -563,7 +556,6 @@ input[type=range]::-webkit-slider-thumb {
     <div id="mainCmdStatus" style="font-family:var(--mono);font-size:0.8rem;color:var(--muted);margin-top:4px;"></div>
   </div>
 
-  <!-- Right col bottom: event log -->
   <div class="card">
     <div class="card-title"><span class="accent">▸</span> Event Log</div>
     <div class="log-list" id="logList">
@@ -571,15 +563,8 @@ input[type=range]::-webkit-slider-thumb {
     </div>
   </div>
 
-</div><!-- /panel-main -->
+</div><div id="panel-observe" class="panel">
 
-
-<!-- ══════════════════════════════════════════════════════════════════════════
-     PANEL: OBSERVE (digital twin read-only live view)
-══════════════════════════════════════════════════════════════════════════ -->
-<div id="panel-observe" class="panel">
-
-  <!-- ToF Distance -->
   <div class="card">
     <div class="card-title"><span class="accent">◈</span> ToF Distance</div>
     <div class="obs-big" id="obsDist">--- <span class="obs-unit">mm</span></div>
@@ -587,7 +572,6 @@ input[type=range]::-webkit-slider-thumb {
     <div class="stale-warn" id="obsStale">⚠ No telemetry for &gt;3s</div>
   </div>
 
-  <!-- Current mode -->
   <div class="card">
     <div class="card-title"><span class="accent">◈</span> Active Mode</div>
     <div style="display:flex;align-items:center;justify-content:center;flex:1;padding:8px 0;">
@@ -596,7 +580,6 @@ input[type=range]::-webkit-slider-thumb {
     <div class="obs-label">Detection mode on hardware</div>
   </div>
 
-  <!-- Vibration motor -->
   <div class="card">
     <div class="card-title"><span class="accent">◈</span> Vibration Motor</div>
     <div style="display:flex;align-items:center;justify-content:center;flex:1;padding:8px 0;">
@@ -608,13 +591,11 @@ input[type=range]::-webkit-slider-thumb {
     <div class="obs-label">Proximity haptic feedback</div>
   </div>
 
-  <!-- LCD display mirror -->
   <div class="card span2">
     <div class="card-title"><span class="accent">◈</span> LCD Display Mirror</div>
-    <div class="lcd-mock" id="obsLcd">—</div>
+    <div class="lcd-mock" id="obsLcd">Dist: Clear<br>AI: Waiting...</div>
   </div>
 
-  <!-- Last detection -->
   <div class="card">
     <div class="card-title"><span class="accent">◈</span> Last Detection</div>
     <div class="obj-name" id="obsObj">—</div>
@@ -622,24 +603,15 @@ input[type=range]::-webkit-slider-thumb {
     <div class="conf-bar-wrap"><div class="conf-bar" id="obsConfBar" style="width:0%"></div></div>
   </div>
 
-  <!-- Distance history chart -->
   <div class="card span3">
     <div class="card-title"><span class="accent">◈</span> Distance History</div>
     <div class="chart-wrap"><canvas id="obsChart"></canvas></div>
   </div>
 
-</div><!-- /panel-observe -->
+</div><div id="panel-control" class="panel">
 
-
-<!-- ══════════════════════════════════════════════════════════════════════════
-     PANEL: CONTROL (digital twin override controls)
-══════════════════════════════════════════════════════════════════════════ -->
-<div id="panel-control" class="panel">
-
-  <!-- Left col -->
   <div style="display:flex;flex-direction:column;gap:16px;">
 
-    <!-- ESP32 connection -->
     <div class="card">
       <div class="card-title"><span class="accent">⌗</span> ESP32 Connection</div>
       <div class="ctrl-label">IP Address</div>
@@ -652,7 +624,6 @@ input[type=range]::-webkit-slider-thumb {
       </div>
     </div>
 
-    <!-- Distance override -->
     <div class="card">
       <div class="card-title"><span class="accent">⊕</span> Distance Override</div>
       <div class="ctrl-label">Simulated ToF reading sent to pipeline</div>
@@ -667,7 +638,6 @@ input[type=range]::-webkit-slider-thumb {
       </div>
     </div>
 
-    <!-- LCD override -->
     <div class="card">
       <div class="card-title"><span class="accent">⊕</span> LCD Text Override</div>
       <div class="ctrl-label">Force display text (overrides natural detection result)</div>
@@ -681,10 +651,8 @@ input[type=range]::-webkit-slider-thumb {
 
   </div>
 
-  <!-- Right col -->
   <div style="display:flex;flex-direction:column;gap:16px;">
 
-    <!-- Mode control -->
     <div class="card">
       <div class="card-title"><span class="accent">⊕</span> Mode Override</div>
       <div class="ctrl-label">Set detection mode on hardware</div>
@@ -696,7 +664,6 @@ input[type=range]::-webkit-slider-thumb {
       <div class="ctrl-label" style="margin-top:4px;">Active on hardware: <span id="ctrlActiveMode" style="color:var(--cyan);font-family:var(--mono);">—</span></div>
     </div>
 
-    <!-- Capture trigger -->
     <div class="card">
       <div class="card-title"><span class="accent">⊕</span> Capture Trigger</div>
       <div class="ctrl-label">Command ESP32 to take a photo + run detection immediately</div>
@@ -704,7 +671,6 @@ input[type=range]::-webkit-slider-thumb {
       <div class="ctrl-label" id="captureStatus" style="text-align:center;margin-top:4px;"></div>
     </div>
 
-    <!-- Command log -->
     <div class="card" style="flex:1;">
       <div class="card-title"><span class="accent">▸</span> Command Log</div>
       <div class="cmd-log" id="cmdLog">
@@ -712,7 +678,6 @@ input[type=range]::-webkit-slider-thumb {
       </div>
     </div>
 
-    <!-- Clear all overrides -->
     <div class="card">
       <div class="card-title"><span class="accent">⚠</span> Reset All Overrides</div>
       <button class="action-btn danger-b" onclick="clearAllOverrides()">Reset to Hardware Defaults</button>
@@ -720,12 +685,7 @@ input[type=range]::-webkit-slider-thumb {
 
   </div>
 
-</div><!-- /panel-control -->
-
-</div><!-- /main -->
-
-
-<script>
+</div></div><script>
 // ═══════════════════════════════════════════════════════════════════════════
 // STATE
 // ═══════════════════════════════════════════════════════════════════════════
@@ -737,6 +697,52 @@ let currentAudioUrl = null;
 let lastTelemetryTs = 0;
 let distOverrideOn  = false;
 let currentTab      = 'main';
+
+// --- LCD STATE VARIABLES ---
+let lastMode        = null;
+let lcdLine1        = "Dist: Clear";
+let lcdTempText     = ""; 
+let lcdTempTimeout  = null;
+let lcdOverrideTxt  = ""; 
+
+// ═══════════════════════════════════════════════════════════════════════════
+// LCD SIMULATION ENGINE
+// ═══════════════════════════════════════════════════════════════════════════
+function renderLcd() {
+  const el = document.getElementById('obsLcd');
+  if (lcdOverrideTxt) {
+    el.innerHTML = lcdOverrideTxt;
+    return;
+  }
+  const l2 = lcdTempText ? lcdTempText : "AI: Waiting...";
+  el.innerHTML = `${lcdLine1}<br>${l2}`;
+}
+
+function setLcdTemp(text, ms) {
+  lcdTempText = text;
+  renderLcd();
+  if (lcdTempTimeout) clearTimeout(lcdTempTimeout);
+  if (ms > 0) {
+    lcdTempTimeout = setTimeout(() => {
+      lcdTempText = "";
+      renderLcd();
+    }, ms);
+  }
+}
+
+function updateLcdLine1(dist) {
+  if (!dist || dist >= 800) {
+    lcdLine1 = "Dist: Clear";
+  } else if (distOverrideOn) {
+    lcdLine1 = `OvrD: ${dist} mm`;
+  } else if (dist < 200) {
+    lcdLine1 = `DANGER: ${dist} mm`;
+  } else {
+    lcdLine1 = `Dist: ${dist} mm`;
+  }
+  renderLcd();
+}
+
 
 // ═══════════════════════════════════════════════════════════════════════════
 // TAB SWITCHING
@@ -835,7 +841,6 @@ function connectSSE() {
 // ═══════════════════════════════════════════════════════════════════════════
 function onDistance(data) {
   const dist = data.distance_mm;
-  // Main panel
   const mainEl = document.getElementById('mainDist');
   mainEl.innerHTML = dist + ' <span class="obs-unit">mm</span>';
   mainEl.classList.toggle('danger', dist < 200);
@@ -845,10 +850,12 @@ function onDistance(data) {
   const avg = Math.round(allDistances.reduce((a,b) => a+b, 0) / allDistances.length);
   document.getElementById('statAvg').textContent = avg + ' mm';
   pushChart(mainChart, dist);
+  
+  updateLcdLine1(dist);
 }
 
 function onDetection(data) {
-  // Main panel
+  // Update UI text panels
   document.getElementById('uiObjName').textContent  = data.result;
   document.getElementById('uiConf').textContent     = (data.confidence * 100).toFixed(0);
   document.getElementById('uiObjDist').textContent  = data.distance;
@@ -862,8 +869,11 @@ function onDetection(data) {
     ocrEl.textContent = data.result !== 'unknown' ? 'Detected: ' + data.result : 'No object.';
     ocrEl.style.color = data.result !== 'unknown' ? 'var(--text)' : 'var(--muted)';
   }
+  
+  // Handle Audio
   setAudio(data.audio_url);
 
+  // Update Image
   const imgEl = document.getElementById('latestPhoto');
   imgEl.src = data.image_url;
   imgEl.style.display = 'block';
@@ -871,10 +881,30 @@ function onDetection(data) {
 
   addLog(data.result.toUpperCase() + ' — ' + data.distance + 'mm', data.timestamp, false);
 
-  // Observe panel sync
+  // Update Twin panels
   document.getElementById('obsObj').textContent = data.result;
   document.getElementById('obsConf').textContent = 'Confidence: ' + (data.confidence * 100).toFixed(0) + '%';
   document.getElementById('obsConfBar').style.width = (data.confidence * 100) + '%';
+  
+  // ─── FIXED LCD DISPLAY LOGIC ───
+  let lcdDisplayText = data.result;
+  
+  // If we are in OCR or OANDO mode, prioritize the OCR text
+  if (data.mode === 'ocr' || data.mode === 'oando') {
+    if (data.ocr_text && data.ocr_text.trim().length > 0) {
+      lcdDisplayText = data.ocr_text.trim();
+    } else if (data.result === 'unknown') {
+      lcdDisplayText = "No text"; // Clean fallback if nothing is read
+    }
+  }
+
+  // Prevent massive text blocks from breaking the LCD UI layout (simulate 16-char limit)
+  if (lcdDisplayText.length > 13) {
+    lcdDisplayText = lcdDisplayText.substring(0, 13) + "...";
+  }
+
+  // Flash the detected text/object on the simulated LCD for 1 second
+  setLcdTemp("AI: " + lcdDisplayText, 2000);
 }
 
 function onAlert(data) {
@@ -898,6 +928,7 @@ function onTelemetry(data) {
     distEl.innerHTML = data.distance_mm + ' <span class="obs-unit">mm</span>';
     distEl.classList.toggle('danger', data.distance_mm < 200);
     pushChart(obsChart, data.distance_mm);
+    updateLcdLine1(data.distance_mm);
   }
 
   // Mode
@@ -906,6 +937,11 @@ function onTelemetry(data) {
   modeEl.textContent = m.toUpperCase();
   modeEl.className   = 'mode-badge mode-' + m;
   document.getElementById('ctrlActiveMode').textContent = m.toUpperCase();
+  
+  if (lastMode !== null && lastMode !== m) {
+    setLcdTemp("Mode: " + m.toUpperCase(), 5000);
+  }
+  lastMode = m; 
 
   // Vibration
   const vDot = document.getElementById('vibDot');
@@ -920,12 +956,13 @@ function onTelemetry(data) {
     vLbl.textContent = 'OFF';
   }
 
-  // LCD
-  if (data.lcd_text !== undefined && data.lcd_text !== null) {
-    document.getElementById('obsLcd').textContent = data.lcd_text || '—';
+  // LCD Override String
+  if (data.lcd_text !== undefined) {
+    lcdOverrideTxt = data.lcd_text;
+    renderLcd();
   }
 
-  // Object from telemetry (optional fields)
+  // Object
   if (data.object_name) {
     document.getElementById('obsObj').textContent = data.object_name;
     const conf = data.confidence || 0;
@@ -954,12 +991,14 @@ audioPlayer.addEventListener('pause', resetPlayBtn);
 audioPlayer.addEventListener('play',  () => {
   btnPlay.textContent = '⏸'; btnPlay.classList.add('playing');
   audioLbl.textContent = 'Playing…';
+  setLcdTemp("Playing........", 0); 
 });
 
 function resetPlayBtn() {
   if (!audioPlayer.ended && !audioPlayer.paused) return;
   btnPlay.textContent = '▶'; btnPlay.classList.remove('playing');
   audioLbl.textContent = 'Play TTS audio';
+  setLcdTemp("", 0); 
 }
 
 function setAudio(url) {
@@ -994,6 +1033,9 @@ function sendMode(mode) {
     document.getElementById('mainCmdStatus').style.color = 'var(--red)';
     return;
   }
+  
+  setLcdTemp("Mode: " + mode.toUpperCase(), 5000);
+  
   fetch('/api/trigger_device', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -1049,7 +1091,6 @@ function toggleDistOverride() {
   }
 }
 
-// Live-update distance override while slider moves (only if override is on)
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('distSlider').addEventListener('input', function() {
     onSliderMove(this.value);
@@ -1072,6 +1113,8 @@ function clearLcdOverride() {
 }
 
 function sendModeOverride(mode) {
+  setLcdTemp("Mode: " + mode.toUpperCase(), 5000);
+  
   sendOverride({ mode_override: mode });
   ['obj','ocr','oando'].forEach(m => {
     document.getElementById('cmbtn-' + m).className = 'mbtn' + (m === mode ? ' selected-' + mode : '');
@@ -1104,7 +1147,6 @@ function clearAllOverrides() {
   sendOverride({ distance_override: null, lcd_override: null, mode_override: null, trigger_capture: false });
 }
 
-// Core override sender
 function sendOverride(payload, logIt = true, cb = null) {
   fetch('/twin/override', {
     method: 'POST',
@@ -1128,7 +1170,6 @@ function logCmd(msg, ok) {
   div.className = 'cmd-line';
   div.innerHTML = `<span class="cmd-ts">${ts}</span><span class="${ok ? 'cmd-ok' : 'cmd-err'}">${msg}</span>`;
   log.prepend(div);
-  // keep max 40 entries
   while (log.children.length > 40) log.removeChild(log.lastChild);
 }
 
@@ -1158,7 +1199,6 @@ function confirmClear() {
     .then(r => r.json())
     .then(d => {
       alert(d.message);
-      // Clear the live camera feed
       const img = document.getElementById('latestPhoto');
       img.style.display = 'none'; img.src = '';
       document.getElementById('camPlaceholder').style.display = '';
@@ -1191,9 +1231,8 @@ async function downloadFile(url, filename) {
 // ═══════════════════════════════════════════════════════════════════════════
 // BOOT
 // ═══════════════════════════════════════════════════════════════════════════
+renderLcd();
 connectSSE();
-
-// Fetch initial hardware state for observe panel
 fetch('/twin/hw_state').then(r => r.json()).then(onTelemetry).catch(() => {});
 </script>
 </body>
