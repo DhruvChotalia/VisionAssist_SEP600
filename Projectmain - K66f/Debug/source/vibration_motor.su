@@ -1,7 +1,0 @@
-C:\Users\dhruv\OneDrive\Documents\Main two resumes\Projectmain  Button +lcd +filtering\drivers/fsl_clock.h:725:20:CLOCK_EnableClock	24	static
-C:\Users\dhruv\OneDrive\Documents\Main two resumes\Projectmain  Button +lcd +filtering\drivers/fsl_ftm.h:731:20:FTM_StartTimer	24	static
-C:\Users\dhruv\OneDrive\Documents\Main two resumes\Projectmain  Button +lcd +filtering\drivers/fsl_ftm.h:1027:20:FTM_SetSoftwareTrigger	16	static
-C:\Users\dhruv\OneDrive\Documents\Main two resumes\Projectmain  Button +lcd +filtering\drivers/fsl_port.h:374:20:PORT_SetPinMux	24	static
-../source/vibration_motor.c:17:6:Vibration_Motor_Init	56	static
-../source/vibration_motor.c:40:6:Vibration_Motor_SetIntensity	24	static
-../source/vibration_motor.c:57:6:Vibration_Motor_Off	8	static

@@ -1,0 +1,24 @@
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_clock.h:725:20:CLOCK_EnableClock	24	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_clock.h:736:20:CLOCK_DisableClock	24	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_clock.h:757:20:CLOCK_SetSdhc0Clock	16	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_clock.h:767:20:CLOCK_SetEnetTime0Clock	16	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_clock.h:777:20:CLOCK_SetRmii0Clock	16	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_clock.h:787:20:CLOCK_SetLpuartClock	16	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_clock.h:797:20:CLOCK_SetTpmClock	16	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_clock.h:809:20:CLOCK_SetTraceClock	24	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_clock.h:833:20:CLOCK_SetClkOutClock	16	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_clock.h:843:20:CLOCK_SetRtcClkOutClock	16	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_clock.h:1045:20:CLOCK_SetSimSafeDivs	4	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_clock.h:1428:20:CLOCK_SetXtal0Freq	16	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_clock.h:1438:20:CLOCK_SetXtal32Freq	16	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_smc.h:256:20:SMC_SetPowerModeProtection	16	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_smc.h:275:33:SMC_GetPowerModeState	16	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_rtc.h:389:20:RTC_SetOscCapLoad	24	static
+../board/clock_config.c:102:13:CLOCK_CONFIG_SetRtcClock	16	static
+../board/clock_config.c:141:13:CLOCK_CONFIG_EnableUsbhs0PhyPllClock	24	static
+../board/clock_config.c:189:13:CLOCK_CONFIG_EnableUsbhs0PfdClock	24	static
+../board/clock_config.c:226:13:CLOCK_CONFIG_SetUsbSlowClock	16	static
+../board/clock_config.c:238:13:CLOCK_CONFIG_SetFllExtRefDiv	16	static
+../board/clock_config.c:246:6:BOARD_InitBootClocks	8	static
+../board/clock_config.c:371:6:BOARD_BootClockHSRUN	8	static
+../board/clock_config.c:496:6:BOARD_BootClockVLPR	8	static

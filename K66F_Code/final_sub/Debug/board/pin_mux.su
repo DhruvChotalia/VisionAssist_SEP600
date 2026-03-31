@@ -1,0 +1,16 @@
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_clock.h:725:20:CLOCK_EnableClock	24	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_port.h:271:20:PORT_SetPinConfig	32	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_port.h:374:20:PORT_SetPinMux	24	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_port.h:389:20:PORT_EnablePinsDigitalFilter	24	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_port.h:443:20:PORT_SetPinInterruptConfig	24	static
+../board/pin_mux.c:181:6:BOARD_InitBootPins	8	static
+../board/pin_mux.c:204:6:BOARD_InitPins	8	static
+../board/pin_mux.c:244:6:BOARD_InitBUTTONsPins	16	static
+../board/pin_mux.c:316:6:BOARD_InitLEDsPins	32	static
+../board/pin_mux.c:422:6:BOARD_InitACCEL_I2CPins	32	static
+../board/pin_mux.c:546:6:BOARD_InitGYRO_I2CPins	32	static
+../board/pin_mux.c:666:6:BOARD_InitDEBUG_UARTPins	16	static
+../board/pin_mux.c:743:6:BOARD_InitSDHC0Pins	40	static
+../board/pin_mux.c:923:6:BOARD_InitENETPins	48	static
+../board/pin_mux.c:1131:6:BOARD_InitUSBPins	16	static
+../board/pin_mux.c:1176:6:BOARD_InitOSCsPins	8	static

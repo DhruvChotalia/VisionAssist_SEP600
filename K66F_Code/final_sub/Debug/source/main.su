@@ -1,0 +1,5 @@
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_clock.h:725:20:CLOCK_EnableClock	24	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_port.h:271:20:PORT_SetPinConfig	32	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_port.h:374:20:PORT_SetPinMux	24	static
+../source/main.c:42:13:InitHardware	32	static
+../source/main.c:82:5:main	8	static

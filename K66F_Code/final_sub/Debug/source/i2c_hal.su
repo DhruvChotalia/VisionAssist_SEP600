@@ -1,0 +1,10 @@
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_clock.h:725:20:CLOCK_EnableClock	24	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_port.h:271:20:PORT_SetPinConfig	32	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_gpio.h:162:20:GPIO_PinWrite	24	static
+/Users/krishpatel/Downloads/Projectmain  Button +lcd +filtering + speaker less delay/drivers/fsl_gpio.h:244:24:GPIO_PinRead	16	static
+../source/i2c_hal.c:56:13:I2C_MasterCallback	24	static
+../source/i2c_hal.c:69:6:I2C_HAL_Init	24	static
+../source/i2c_hal.c:104:6:I2C_HAL_BusRecover	56	static
+../source/i2c_hal.c:190:17:I2C_TransferWithTimeout	24	static
+../source/i2c_hal.c:220:10:I2C_HAL_ReadRegs	48	static
+../source/i2c_hal.c:238:10:I2C_HAL_WriteRegs	48	static
